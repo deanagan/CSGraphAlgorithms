@@ -56,14 +56,14 @@ namespace GraphAlgorithms
                 var distance = distanceTable[currentVertex].Distance;
                 foreach(var adjacentVertex in Graph.AdjacentVertices(currentVertex))
                 {
-                    var totalDistance = distance + Graph.EdgeWeight(currentVertex, adjacentVertex);
-                    var distanceFromOrigin = distanceTable[adjacentVertex].Distance;
+                    var newDistanceFromOrigin = distance + Graph.EdgeWeight(currentVertex, adjacentVertex);
+                    var currentDistanceFromOrigin = distanceTable[adjacentVertex].Distance;
 
-                    if (distanceFromOrigin == null || distanceFromOrigin > totalDistance)
+                    if (currentDistanceFromOrigin == null || newDistanceFromOrigin < currentDistanceFromOrigin)
                     {
-                        distanceTable[adjacentVertex].Distance = totalDistance;
+                        distanceTable[adjacentVertex].Distance = newDistanceFromOrigin;
                         distanceTable[adjacentVertex].PreviousVertex = currentVertex;
-                        priorityQueue.Enqueue(totalDistance.Value, adjacentVertex);
+                        priorityQueue.Enqueue(newDistanceFromOrigin.Value, adjacentVertex);
                     }
                 }
             }
