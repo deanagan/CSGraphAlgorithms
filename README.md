@@ -1,3 +1,11 @@
 # csharp-graph-algorithms
 Graph Algorithms written in C#
-This library will be used for path finding animation with Unity
+This is a demo of implementing some graph algorithms using C#.
+
+The library is built using dotnetcore.
+
+Algorithms implemented:
+
+*Dijkstra
+*Unweighted Shortest Path
+*Topological Sort
