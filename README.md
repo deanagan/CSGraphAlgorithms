@@ -6,6 +6,6 @@ The library is built using dotnetcore.
 
 Algorithms implemented:
 
-*Dijkstra
-*Unweighted Shortest Path
-*Topological Sort
+* Dijkstra
+* Unweighted Shortest Path
+* Topological Sort
